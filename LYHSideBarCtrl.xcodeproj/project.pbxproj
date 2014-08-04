@@ -10,6 +10,9 @@
 		CB0455F9198F7935009DC8D4 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0455F8198F7935009DC8D4 /* LeftViewController.m */; };
 		CB0455FC198F793E009DC8D4 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0455FB198F793E009DC8D4 /* RightViewController.m */; };
 		CB0455FF198F7947009DC8D4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0455FE198F7947009DC8D4 /* MainViewController.m */; };
+		CB128DBF198F8F4100068DE7 /* LYHArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB128DBE198F8F4100068DE7 /* LYHArrayDataSource.m */; };
+		CB128DC2198F8F4D00068DE7 /* LYHTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB128DC1198F8F4D00068DE7 /* LYHTableDelegate.m */; };
+		CB128DC5198F8F6000068DE7 /* LYHDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB128DC4198F8F6000068DE7 /* LYHDataCell.m */; };
 		CB3E1B10198F6A89008F4AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3E1B0F198F6A89008F4AE9 /* Foundation.framework */; };
 		CB3E1B12198F6A89008F4AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3E1B11198F6A89008F4AE9 /* CoreGraphics.framework */; };
 		CB3E1B14198F6A89008F4AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3E1B13198F6A89008F4AE9 /* UIKit.framework */; };
@@ -42,6 +45,12 @@
 		CB0455FB198F793E009DC8D4 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		CB0455FD198F7947009DC8D4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CB0455FE198F7947009DC8D4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CB128DBD198F8F4100068DE7 /* LYHArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHArrayDataSource.h; sourceTree = "<group>"; };
+		CB128DBE198F8F4100068DE7 /* LYHArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHArrayDataSource.m; sourceTree = "<group>"; };
+		CB128DC0198F8F4D00068DE7 /* LYHTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHTableDelegate.h; sourceTree = "<group>"; };
+		CB128DC1198F8F4D00068DE7 /* LYHTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHTableDelegate.m; sourceTree = "<group>"; };
+		CB128DC3198F8F6000068DE7 /* LYHDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHDataCell.h; sourceTree = "<group>"; };
+		CB128DC4198F8F6000068DE7 /* LYHDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHDataCell.m; sourceTree = "<group>"; };
 		CB3E1B0C198F6A89008F4AE9 /* LYHSideBarCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYHSideBarCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3E1B0F198F6A89008F4AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB3E1B11198F6A89008F4AE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB128DBC198F8F2F00068DE7 /* LighterTable */ = {
+			isa = PBXGroup;
+			children = (
+				CB128DC0198F8F4D00068DE7 /* LYHTableDelegate.h */,
+				CB128DC1198F8F4D00068DE7 /* LYHTableDelegate.m */,
+				CB128DBD198F8F4100068DE7 /* LYHArrayDataSource.h */,
+				CB128DBE198F8F4100068DE7 /* LYHArrayDataSource.m */,
+				CB128DC3198F8F6000068DE7 /* LYHDataCell.h */,
+				CB128DC4198F8F6000068DE7 /* LYHDataCell.m */,
+			);
+			name = LighterTable;
+			sourceTree = "<group>";
+		};
 		CB3E1B03198F6A89008F4AE9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +150,7 @@
 				CB0455FB198F793E009DC8D4 /* RightViewController.m */,
 				CB0455FD198F7947009DC8D4 /* MainViewController.h */,
 				CB0455FE198F7947009DC8D4 /* MainViewController.m */,
+				CB128DBC198F8F2F00068DE7 /* LighterTable */,
 				CB3E1B3E198F759C008F4AE9 /* SideBarCtrl */,
 				CB3E1B21198F6A89008F4AE9 /* Images.xcassets */,
 				CB3E1B16198F6A89008F4AE9 /* Supporting Files */,
@@ -274,6 +297,9 @@
 				CB0455FF198F7947009DC8D4 /* MainViewController.m in Sources */,
 				CB3E1B41198F75BB008F4AE9 /* LYHSideBarViewController.m in Sources */,
 				CB0455F9198F7935009DC8D4 /* LeftViewController.m in Sources */,
+				CB128DBF198F8F4100068DE7 /* LYHArrayDataSource.m in Sources */,
+				CB128DC2198F8F4D00068DE7 /* LYHTableDelegate.m in Sources */,
+				CB128DC5198F8F6000068DE7 /* LYHDataCell.m in Sources */,
 				CB3E1B20198F6A89008F4AE9 /* LYHAppDelegate.m in Sources */,
 				CB3E1B1C198F6A89008F4AE9 /* main.m in Sources */,
 			);
