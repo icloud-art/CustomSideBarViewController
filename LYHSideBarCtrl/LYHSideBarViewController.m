@@ -79,6 +79,9 @@ const float MoveAnimationDuration = 0.3;
     panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panInContentView:)];
     [self.contentView addGestureRecognizer:panGestureRecognizer];
 }
+/**
+ 平移手势处理事件
+ */
 - (void)panInContentView:(UIPanGestureRecognizer *)panRecognizer
 {
     if (panRecognizer.state == UIGestureRecognizerStateChanged) {
@@ -163,6 +166,9 @@ const float MoveAnimationDuration = 0.3;
     }
     [self showSideBarControllerWithDirection:SideBarShowDirectionNone];
 }
+/**
+ 显示SideBar的方法
+ */
 - (void) showSideBarControllerWithDirection:(SideBarShowDirection)direction
 {
     if (direction!=SideBarShowDirectionNone)
@@ -179,6 +185,9 @@ const float MoveAnimationDuration = 0.3;
     }
     [self moveAnimationWithDirection:direction duration:MoveAnimationDuration];
 }
+/**
+ 移动视图的方法
+ */
 - (void)moveAnimationWithDirection:(SideBarShowDirection)direction duration:(float)duration
 {
     void (^animations)(void) = ^{
@@ -226,6 +235,9 @@ const float MoveAnimationDuration = 0.3;
     self.navBackView.userInteractionEnabled = NO;
     [UIView animateWithDuration:duration animations:animations completion:complete];
 }
+/**
+ 添加单击手势
+ */
 - (void)contentViewAddTapGestures
 {
     if (tapGestureRecognizer) {
@@ -235,6 +247,9 @@ const float MoveAnimationDuration = 0.3;
     tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnContentView:)];
     [self.contentView addGestureRecognizer:tapGestureRecognizer];
 }
+/**
+ 单机手势的处理事件
+ */
 - (void)tapOnContentView:(UITapGestureRecognizer *)tapGesture
 {
     [self moveAnimationWithDirection:SideBarShowDirectionNone duration:MoveAnimationDuration];
