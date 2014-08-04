@@ -30,6 +30,8 @@
     if ([self.delegate respondsToSelector:@selector(leftSideBarSelectWithController:)]) {
         [self.delegate leftSideBarSelectWithController: [self subControllerWithIndex:0]];
     }
+    UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [self.view addSubview:tableView];
 }
 - (UINavigationController *)subControllerWithIndex:(NSInteger)index
 {
