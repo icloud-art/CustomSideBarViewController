@@ -15,6 +15,7 @@
 {
     LYHArrayDataSource * _dataSource;
     LYHTableDelegate * _delegate;
+    NSInteger selectIndex;
 }
 @end
 
@@ -35,6 +36,7 @@
     self.view.backgroundColor = [UIColor brownColor];
     if ([self.delegate respondsToSelector:@selector(leftSideBarSelectWithController:)]) {
         [self.delegate leftSideBarSelectWithController: [self subControllerWithIndex:0]];
+        selectIndex = 0;
     }
     UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.view addSubview:tableView];
@@ -46,7 +48,17 @@
     tableView.dataSource = _dataSource;
     
     TableViewDelegateConfigureBlock delegateBlock = ^(LYHDataCell *cell,NSIndexPath * indexPath){
-        
+        if ([delegate respondsToSelector:@selector(leftSideBarSelectWithController:)]) {
+            if (indexPath.row == selectIndex) {
+                [delegate leftSideBarSelectWithController:nil];
+            }
+            else
+            {
+                [delegate leftSideBarSelectWithController:[self subControllerWithIndex:indexPath.row]];
+            }
+        }
+        selectIndex = indexPath.row;
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     };
     _delegate = [[LYHTableDelegate alloc]initWithCount:array.count andHeight:60 andConfigureBlock:delegateBlock];
     tableView.delegate = _delegate;
@@ -56,6 +68,7 @@
 {
     MainViewController * mainView =[[MainViewController alloc]init];
     mainView.title = @"自定义SideBar";
+    mainView.titleText = [NSString stringWithFormat:@"第%ld行",index + 1];
     UINavigationController * navCtrl = [[UINavigationController alloc]initWithRootViewController:mainView];
     return navCtrl;
 }
