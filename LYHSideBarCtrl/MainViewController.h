@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-
+@property (copy,nonatomic) NSString * titleText;
 @end

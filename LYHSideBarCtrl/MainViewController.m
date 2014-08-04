@@ -13,7 +13,7 @@
 @end
 
 @implementation MainViewController
-
+@synthesize titleText;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,6 +58,12 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor greenColor];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:17.0f];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    label.text = self.titleText;
 }
 
 - (void)didReceiveMemoryWarning
