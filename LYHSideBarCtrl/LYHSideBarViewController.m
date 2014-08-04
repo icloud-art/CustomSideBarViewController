@@ -13,6 +13,8 @@
 {
     UIViewController * currentMainViewController;
     CGFloat currentTranslate;
+    UIPanGestureRecognizer * panGestureRecognizer;
+    UITapGestureRecognizer * tapGestureRecognizer;
 }
 //声明左右视图控制器属性
 @property (strong,nonatomic) UIViewController * leftViewController;
@@ -74,6 +76,64 @@ const float MoveAnimationDuration = 0.3;
     [self.navBackView addSubview:self.leftViewController.view];
     [self.navBackView addSubview:self.rightViewController.view];
     
+    panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panInContentView:)];
+    [self.contentView addGestureRecognizer:panGestureRecognizer];
+}
+- (void)panInContentView:(UIPanGestureRecognizer *)panRecognizer
+{
+    if (panRecognizer.state == UIGestureRecognizerStateChanged) {
+        CGFloat translation = [panRecognizer translationInView:self.contentView].x;
+        self.contentView.transform = CGAffineTransformMakeTranslation(translation+currentTranslate, 0);
+        UIView * view;
+        if (translation+currentTranslate>0) {
+            view = self.leftViewController.view;
+        }
+        else
+        {
+            view = self.rightViewController.view;
+        }
+        [self.navBackView bringSubviewToFront:view];
+    }
+    else if(panRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        currentTranslate = self.contentView.transform.tx;
+        //不显示SideBar的情况
+        if (!sideBarShowing)
+        {
+            //当前偏移量小于最小偏移量不显示SideBar
+            if (fabs(currentTranslate)<ContentMinOffset) {
+                [self moveAnimationWithDirection:SideBarShowDirectionNone duration:MoveAnimationDuration];
+            }
+            //当前偏移量大于最小偏移量,显示左边SideBar
+            else if(currentTranslate > ContentMinOffset)
+            {
+                [self moveAnimationWithDirection:SideBarShowDirectionLeft duration:MoveAnimationDuration];
+            }
+            //其他情况均显示右侧SideBar
+            else
+            {
+                [self moveAnimationWithDirection:SideBarShowDirectionRight duration:MoveAnimationDuration];
+            }
+        }
+        //SideBar已经显示的时候
+        else
+        {
+            //如果当前偏移量的绝对值小于最大偏移量和最小偏移量的差,那么不显示SideBar
+            if (fabs(currentTranslate)<ContentOffset - ContentMinOffset) {
+                [self moveAnimationWithDirection:SideBarShowDirectionNone duration:MoveAnimationDuration];
+            }
+            //如果当前偏移量大于最大偏移量和最小偏移量的差,则显示左边SideBar(此时本来显示的是左边,即没有变化)
+            else if (currentTranslate > ContentOffset - ContentMinOffset)
+            {
+                [self moveAnimationWithDirection:SideBarShowDirectionLeft duration:MoveAnimationDuration];
+            }
+            //如果当前偏移量小于最大偏移量和最小偏移量的差则显示右边SideBar(此时本来就显示的是右边,即没有变化)
+            else
+            {
+                [self moveAnimationWithDirection:SideBarShowDirectionRight duration:MoveAnimationDuration];
+            }
+        }
+    }
 }
 #pragma LYHSideBarDelegate的委托方法
 - (void)leftSideBarSelectWithController:(UIViewController *)controller
@@ -148,15 +208,15 @@ const float MoveAnimationDuration = 0.3;
         if (direction == SideBarShowDirectionNone)
         {
             
-//            if (tapGestureRecognizer) {
-//                [self.contentView removeGestureRecognizer:tapGestureRecognizer];
-//                tapGestureRecognizer = nil;
-//            }
+            if (tapGestureRecognizer) {
+                [self.contentView removeGestureRecognizer:tapGestureRecognizer];
+                tapGestureRecognizer = nil;
+            }
             sideBarShowing = NO;
         }
         else
         {
-//            [self contentViewAddTapGestures];
+            [self contentViewAddTapGestures];
             sideBarShowing = YES;
         }
         currentTranslate = self.contentView.transform.tx;
@@ -165,6 +225,19 @@ const float MoveAnimationDuration = 0.3;
     self.contentView.userInteractionEnabled = NO;
     self.navBackView.userInteractionEnabled = NO;
     [UIView animateWithDuration:duration animations:animations completion:complete];
+}
+- (void)contentViewAddTapGestures
+{
+    if (tapGestureRecognizer) {
+        [self.contentView removeGestureRecognizer:tapGestureRecognizer];
+        tapGestureRecognizer = nil;
+    }
+    tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnContentView:)];
+    [self.contentView addGestureRecognizer:tapGestureRecognizer];
+}
+- (void)tapOnContentView:(UITapGestureRecognizer *)tapGesture
+{
+    [self moveAnimationWithDirection:SideBarShowDirectionNone duration:MoveAnimationDuration];
 }
  -(void)rightSideBarSelectWithController:(UIViewController *)controller
 {
