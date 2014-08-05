@@ -63,6 +63,7 @@
     _delegate = [[LYHTableDelegate alloc]initWithCount:array.count andHeight:60 andConfigureBlock:delegateBlock];
     tableView.delegate = _delegate;
     [self.view addSubview:tableView];
+    
 }
 - (UINavigationController *)subControllerWithIndex:(NSInteger)index
 {
