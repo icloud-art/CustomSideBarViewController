@@ -96,6 +96,7 @@ const float MoveAnimationDuration = 0.3;
             view = self.rightViewController.view;
         }
         [self.navBackView bringSubviewToFront:view];
+        [self statusBarView].transform = panRecognizer.view.transform;
     }
     else if(panRecognizer.state == UIGestureRecognizerStateEnded)
     {
@@ -195,16 +196,19 @@ const float MoveAnimationDuration = 0.3;
             case SideBarShowDirectionNone:
             {
                 self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
+                [self statusBarView].transform = self.contentView.transform;
             }
                 break;
             case SideBarShowDirectionLeft:
             {
                 self.contentView.transform  = CGAffineTransformMakeTranslation(ContentOffset, 0);
+                [self statusBarView].transform = self.contentView.transform;
             }
                 break;
             case SideBarShowDirectionRight:
             {
                 self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
+                [self statusBarView].transform = self.contentView.transform;
             }
                 break;
             default:
@@ -234,6 +238,18 @@ const float MoveAnimationDuration = 0.3;
     self.contentView.userInteractionEnabled = NO;
     self.navBackView.userInteractionEnabled = NO;
     [UIView animateWithDuration:duration animations:animations completion:complete];
+}
+/**
+ 获取当前状态栏的方法
+ */
+- (UIView*)statusBarView;
+{
+    UIView *statusBar = nil;
+    NSData *data = [NSData dataWithBytes:(unsigned char []){0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x61, 0x72} length:9];
+    NSString *key = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    id object = [UIApplication sharedApplication];
+    if ([object respondsToSelector:NSSelectorFromString(key)]) statusBar = [object valueForKey:key];
+    return statusBar;
 }
 /**
  添加单击手势
