@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UIScrollViewDelegate,UIGestureRecognizerDelegate>
 @property (copy,nonatomic) NSString * titleText;
+@property (strong,nonatomic)  UIScrollView * mScrollView;
 @end

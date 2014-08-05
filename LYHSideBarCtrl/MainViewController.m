@@ -9,11 +9,13 @@
 #import "MainViewController.h"
 #import "LYHSideBarViewController.h"
 @interface MainViewController ()
-
+{
+   
+}
 @end
 
 @implementation MainViewController
-@synthesize titleText;
+@synthesize titleText,mScrollView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,12 +60,61 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor greenColor];
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:17.0f];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:label];
-    label.text = self.titleText;
+    
+    self.mScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    self.mScrollView.backgroundColor = [UIColor yellowColor];
+    self.mScrollView.contentSize = CGSizeMake(320 * 10, 568-64);
+    self.mScrollView.showsVerticalScrollIndicator = NO;
+    self.mScrollView.showsHorizontalScrollIndicator = NO;
+    self.mScrollView.bounces = NO;
+    self.mScrollView.delegate = self;
+    self.mScrollView.alwaysBounceVertical = NO;
+    self.mScrollView.alwaysBounceHorizontal = YES;
+    self.mScrollView.pagingEnabled = YES;
+    [self.view addSubview:self.mScrollView];
+    for (int i = 0 ; i<10; i++) {
+        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(320 * i, 0, 320, 568-64)];
+        imageView.backgroundColor = [UIColor brownColor];
+        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:17.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        [imageView addSubview:label];
+        label.text = [NSString stringWithFormat:@"第%d页",i];
+        [self.mScrollView addSubview:imageView];
+    }
+}
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"begin");
+    CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView.panGestureRecognizer.view];
+    CGPoint translation = [scrollView.panGestureRecognizer  translationInView:scrollView.panGestureRecognizer.view];
+     NSLog(@"translation.x is %f velocity.x is %f",translation.x,velocity.x);
+    //如果scrollview的偏移为0并且手势方向为从左向右滑,则显示左边SideBar
+    if (scrollView.contentOffset.x == 0 && translation.x > 0) {
+       [[LYHSideBarViewController share]showSideBarControllerWithDirection:SideBarShowDirectionLeft];
+        //scrollView.panGestureRecognizer.view.userInteractionEnabled = NO;
+        //self.mScrollView.userInteractionEnabled = NO;
+    }
+    if (scrollView.contentOffset.x == 320 * 9) {
+        [[LYHSideBarViewController share]showSideBarControllerWithDirection:SideBarShowDirectionRight];
+        // self.mScrollView.userInteractionEnabled = NO;
+    }
+}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+//{
+//    if ([touch.view isKindOfClass:[UIScrollView class]]) {
+//        return NO;
+//    }
+//    return YES;
+//}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSLog(@"scrollview.offSet is %f",scrollView.contentOffset.x);
 }
 
 - (void)didReceiveMemoryWarning
