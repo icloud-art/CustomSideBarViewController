@@ -26,7 +26,7 @@
 static LYHSideBarViewController * rootController;
 const int ContentOffset = 230;
 const int ContentMinOffset = 60;
-const float MoveAnimationDuration = 0.3;
+const float MoveAnimationDuration = 0.8;
 +(id)share
 {
     return rootController;
@@ -195,20 +195,33 @@ const float MoveAnimationDuration = 0.3;
 		switch (direction) {
             case SideBarShowDirectionNone:
             {
-                self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
-                [self statusBarView].transform = self.contentView.transform;
+//                self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
+//                [self statusBarView].transform = self.contentView.transform;
+                [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:1 initialSpringVelocity:1.0 options:UIViewAnimationOptionTransitionNone animations:^{
+                    self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
+                    [self statusBarView].transform = self.contentView.transform;
+                } completion:nil];
             }
                 break;
             case SideBarShowDirectionLeft:
             {
-                self.contentView.transform  = CGAffineTransformMakeTranslation(ContentOffset, 0);
-                [self statusBarView].transform = self.contentView.transform;
+                
+               [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                   self.contentView.transform  = CGAffineTransformMakeTranslation(ContentOffset, 0);
+                   [self statusBarView].transform = self.contentView.transform;
+               } completion:nil];
+                
+               
             }
                 break;
             case SideBarShowDirectionRight:
             {
-                self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
-                [self statusBarView].transform = self.contentView.transform;
+//                self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
+//                [self statusBarView].transform = self.contentView.transform;
+                [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                    self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
+                    [self statusBarView].transform = self.contentView.transform;
+                } completion:nil];
             }
                 break;
             default:
