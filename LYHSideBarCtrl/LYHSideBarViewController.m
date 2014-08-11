@@ -9,12 +9,14 @@
 #import "LYHSideBarViewController.h"
 #import "LeftViewController.h"
 #import "RightViewController.h"
+//#import "MainViewController.h"
 @interface LYHSideBarViewController ()
 {
     UIViewController * currentMainViewController;
     CGFloat currentTranslate;
     UIPanGestureRecognizer * panGestureRecognizer;
     UITapGestureRecognizer * tapGestureRecognizer;
+   // MainViewController * mainViewController;
 }
 //声明左右视图控制器属性
 @property (strong,nonatomic) UIViewController * leftViewController;
@@ -160,7 +162,7 @@ const float MoveAnimationDuration = 0.8;
         self.view.userInteractionEnabled = NO;
         [self transitionFromViewController:currentMainViewController toViewController:controller duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
             self.view.userInteractionEnabled = YES;
-            [currentMainViewController removeFromParentViewController];
+           [currentMainViewController removeFromParentViewController];
             [controller didMoveToParentViewController:self];
             currentMainViewController = controller;
         }];
@@ -195,11 +197,10 @@ const float MoveAnimationDuration = 0.8;
 		switch (direction) {
             case SideBarShowDirectionNone:
             {
-//                self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
-//                [self statusBarView].transform = self.contentView.transform;
                 [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:1 initialSpringVelocity:1.0 options:UIViewAnimationOptionTransitionNone animations:^{
-                    self.contentView.transform  = CGAffineTransformMakeTranslation(0, 0);
+                    self.contentView.transform = CGAffineTransformMakeTranslation(0, 0);
                     [self statusBarView].transform = self.contentView.transform;
+                    
                 } completion:nil];
             }
                 break;
@@ -208,16 +209,19 @@ const float MoveAnimationDuration = 0.8;
                 
                [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                    self.contentView.transform  = CGAffineTransformMakeTranslation(ContentOffset, 0);
+                   /*
+                    组合动画
+                    CGAffineTransform trans  = CGAffineTransformMakeTranslation(ContentOffset, 0);
+                    CGAffineTransform scale = CGAffineTransformMakeScale(0.8, 0.8);
+                    CGAffineTransform newTransform = CGAffineTransformConcat(trans, scale);
+                    self.contentView.transform = newTransform;
+                    */
                    [self statusBarView].transform = self.contentView.transform;
                } completion:nil];
-                
-               
             }
                 break;
             case SideBarShowDirectionRight:
             {
-//                self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
-//                [self statusBarView].transform = self.contentView.transform;
                 [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                     self.contentView.transform  = CGAffineTransformMakeTranslation(-ContentOffset, 0);
                     [self statusBarView].transform = self.contentView.transform;

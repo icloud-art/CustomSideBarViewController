@@ -61,28 +61,35 @@
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor greenColor];
     
-    self.mScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-    self.mScrollView.backgroundColor = [UIColor yellowColor];
-    self.mScrollView.contentSize = CGSizeMake(320 * 10, 568-64);
-    self.mScrollView.showsVerticalScrollIndicator = NO;
-    self.mScrollView.showsHorizontalScrollIndicator = NO;
-    self.mScrollView.bounces = NO;
-    self.mScrollView.delegate = self;
-    self.mScrollView.alwaysBounceVertical = NO;
-    self.mScrollView.alwaysBounceHorizontal = YES;
-    self.mScrollView.pagingEnabled = YES;
-    [self.view addSubview:self.mScrollView];
-    for (int i = 0 ; i<10; i++) {
-        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(320 * i, 0, 320, 568-64)];
-        imageView.backgroundColor = [UIColor brownColor];
-        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
-        label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont systemFontOfSize:17.0f];
-        label.textAlignment = NSTextAlignmentCenter;
-        [imageView addSubview:label];
-        label.text = [NSString stringWithFormat:@"第%d页",i];
-        [self.mScrollView addSubview:imageView];
-    }
+//    self.mScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+//    self.mScrollView.backgroundColor = [UIColor yellowColor];
+//    self.mScrollView.contentSize = CGSizeMake(320 * 10, 568-64);
+//    self.mScrollView.showsVerticalScrollIndicator = NO;
+//    self.mScrollView.showsHorizontalScrollIndicator = NO;
+//    self.mScrollView.bounces = NO;
+//    self.mScrollView.delegate = self;
+//    self.mScrollView.alwaysBounceVertical = NO;
+//    self.mScrollView.alwaysBounceHorizontal = YES;
+//    self.mScrollView.pagingEnabled = YES;
+//    //[self.view addSubview:self.mScrollView];
+//    for (int i = 0 ; i<10; i++) {
+//        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(320 * i, 0, 320, 568-64)];
+//        imageView.backgroundColor = [UIColor brownColor];
+//        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
+//        label.backgroundColor = [UIColor clearColor];
+//        label.font = [UIFont systemFontOfSize:17.0f];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        [imageView addSubview:label];
+//        label.text = [NSString stringWithFormat:@"第%d页",i];
+//        [self.mScrollView addSubview:imageView];
+//    }
+//    
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:17.0f];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    label.text = [NSString stringWithFormat:@"%@",self.titleText];
 }
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
@@ -104,6 +111,18 @@
         [[LYHSideBarViewController share]showSideBarControllerWithDirection:SideBarShowDirectionRight];
         // self.mScrollView.userInteractionEnabled = NO;
     }
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"mainView willappear");
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"mainview diddisappear");
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"mainview didAppear");
 }
 //- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 //{
