@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SideItem.h"
 
 @interface LYHDataCell : UITableViewCell
 @property (retain,nonatomic) UILabel * mTitle;
-
-- (void)configureForData:(NSString *)data;
+@property (strong,nonatomic) UIImageView * icon;
+- (void)configureForData:(SideItem *)item;
 @end

@@ -16,15 +16,19 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-        self.mTitle = [[UILabel alloc]initWithFrame:CGRectMake(30, 10, 200, 40)];
+        self.icon = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 20, 20)];
+        self.icon.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.icon];
+        self.mTitle = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.icon.frame) + 10, 10, 200, 40)];
+        self.mTitle.textColor = [UIColor whiteColor];
         [self.contentView addSubview:self.mTitle];
     }
     return self;
 }
-- (void)configureForData:(NSString *)data
+- (void)configureForData:( SideItem*)item
 {
-    self.mTitle.text = data;
+    self.mTitle.text = item.title;
+    self.icon.image= [UIImage imageNamed:item.iconName];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

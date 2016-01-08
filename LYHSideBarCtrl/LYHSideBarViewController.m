@@ -9,14 +9,16 @@
 #import "LYHSideBarViewController.h"
 #import "LeftViewController.h"
 #import "RightViewController.h"
-//#import "MainViewController.h"
+#import "MessageViewController.h"
+#import "ContactListViewController.h"
+#import "DynamicViewController.h"
 @interface LYHSideBarViewController ()
 {
     UIViewController * currentMainViewController;
     CGFloat currentTranslate;
     UIPanGestureRecognizer * panGestureRecognizer;
     UITapGestureRecognizer * tapGestureRecognizer;
-   // MainViewController * mainViewController;
+    UITabBarController * tabbar;
 }
 //声明左右视图控制器属性
 @property (strong,nonatomic) UIViewController * leftViewController;
@@ -79,6 +81,77 @@ const float MoveAnimationDuration = 0.8;
     
     panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panInContentView:)];
     [self.contentView addGestureRecognizer:panGestureRecognizer];
+    
+    [self makeToolBarView];
+}
+- (void)makeToolBarView{
+    
+    tabbar = [[UITabBarController alloc]init];
+    [self addChildViewController:tabbar];
+    [self.contentView addSubview:tabbar.view];
+    
+    
+//    toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0,SCREENHEIGHT - 44, SCREENWIDTH, 44)];
+//    toolBar.backgroundColor = [UIColor whiteColor];
+//    NSArray * titleArray = @[@"消息",@"联系人",@"动态"];
+//    NSArray * imgArray = @[@"sidebar_album",@"sidebar_album",@"sidebar_album"];
+//    NSArray * highImgArray = @[@"sidebar_album",@"sidebar_album",@"sidebar_album"];
+//    for (int i=0 ;i <3 ; i++) {
+//        
+//        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        button.frame = CGRectMake(SCREENWIDTH/3*i, 0,SCREENWIDTH/3, 30);
+//        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [button setImage:[UIImage imageNamed:imgArray[i]] forState:UIControlStateNormal];
+//        button.tag = 100+i;
+//        [button setImage:[UIImage imageNamed:imgArray[i]] forState:UIControlStateHighlighted];
+//        [toolBar addSubview:button];
+//        UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(button.frame.origin.x, CGRectGetMaxY(button.frame), SCREENWIDTH/3, 14)];
+//        titleLabel.text  = titleArray[i];
+//        titleLabel.textAlignment = NSTextAlignmentCenter;
+//        titleLabel.font = [UIFont systemFontOfSize:13.0f];
+//        titleLabel.textColor = [UIColor grayColor];
+//        titleLabel.alpha = 0.8;
+//        [toolBar addSubview:titleLabel];
+//    }
+//    [self.contentView addSubview:toolBar];
+//    
+//    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+//    
+//    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithCustomView:<#(nonnull UIView *)#> target:self action:@selector(toobarAction:)];
+//    UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toobarAction:)];
+//    UIBarButtonItem *item3 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toobarAction:)];
+//
+//    NSArray *items = [NSArray arrayWithObjects:spaceItem,item1,spaceItem,item2,spaceItem,item3,nil];
+//    toolBar.items = items;
+
+    
+    NSMutableArray * array = [[NSMutableArray alloc] initWithCapacity:0];
+
+    MessageViewController *messageVC = [[MessageViewController alloc] init];
+    
+    UINavigationController * nav1 = [[UINavigationController alloc]initWithRootViewController:messageVC];
+    UITabBarItem *item1 = [[UITabBarItem alloc]initWithTitle:@"消息" image:[[UIImage imageNamed:@"tab_recent_nor"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"tab_recent_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    nav1.tabBarItem=item1;
+    
+    ContactListViewController * contactVC = [[ContactListViewController alloc]init];
+    UINavigationController * nav2 = [[UINavigationController alloc]initWithRootViewController:contactVC];
+    UITabBarItem *item2 = [[UITabBarItem alloc]initWithTitle:@"联系人" image:[[UIImage imageNamed:@"tab_buddy_nor"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"tab_buddy_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    nav2.tabBarItem=item2;
+    [array addObject:nav2];
+
+    DynamicViewController * dynamicVC = [[DynamicViewController alloc]init];
+    UINavigationController * nav3 = [[UINavigationController alloc]initWithRootViewController:dynamicVC];
+    UITabBarItem *item3 = [[UITabBarItem alloc]initWithTitle:@"动态" image:[[UIImage imageNamed:@"tab_qworld_nor"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"tab_qworld_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    nav3.tabBarItem=item3;
+    [array addObject:nav3];
+    
+    tabbar.viewControllers = @[nav1,nav2,nav3];
+    tabbar.selectedIndex = 0;
+    tabbar.tabBar.selectedImageTintColor = customerBlue;
+
+}
+- (void)buttonClick:(UIButton *)sender{
+    NSLog(@"%zi",sender.tag);
 }
 /**
  平移手势处理事件
@@ -143,6 +216,7 @@ const float MoveAnimationDuration = 0.8;
 #pragma LYHSideBarDelegate的委托方法
 - (void)leftSideBarSelectWithController:(UIViewController *)controller
 {
+
     if ([controller isKindOfClass:[UINavigationController class]])
     {
         [(UINavigationController *)controller setDelegate:self];
@@ -153,6 +227,7 @@ const float MoveAnimationDuration = 0.8;
         [self addChildViewController:currentMainViewController];
         [self.contentView addSubview:currentMainViewController.view];
         [currentMainViewController didMoveToParentViewController:self];
+        [self.navBackView bringSubviewToFront:tabbar.view];
     }
     else if (controller!=nil && currentMainViewController !=controller) {
         controller.view.frame = self.contentView.bounds;
@@ -165,6 +240,8 @@ const float MoveAnimationDuration = 0.8;
             [controller didMoveToParentViewController:self];
             currentMainViewController = controller;
         }];
+        [self.navBackView bringSubviewToFront:tabbar.view];
+
     }
     [self showSideBarControllerWithDirection:SideBarShowDirectionNone];
 }
@@ -285,7 +362,7 @@ const float MoveAnimationDuration = 0.8;
 {
     [self moveAnimationWithDirection:SideBarShowDirectionNone duration:MoveAnimationDuration];
 }
- -(void)rightSideBarSelectWithController:(UIViewController *)controller
+- (void)rightSideBarSelectWithController:(UIViewController *)controller
 {
     
 }

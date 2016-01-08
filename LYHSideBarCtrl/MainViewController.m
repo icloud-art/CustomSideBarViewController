@@ -26,15 +26,19 @@
         
         
         UIButton * btnLeft = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        btnLeft.frame = CGRectMake(0, 0, 80, 30);
-        [btnLeft setTitle:@"左边" forState:UIControlStateNormal];
+        btnLeft.frame = CGRectMake(0, 0, 35, 35);
+        btnLeft.clipsToBounds = YES;
+        btnLeft.layer.cornerRadius = 35.0/2;
+        [btnLeft setBackgroundImage:[UIImage imageNamed:@"headimage.jpg"] forState:UIControlStateNormal];
+        
         [btnLeft addTarget:self action:@selector(btnLeft) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem * barLeft = [[UIBarButtonItem alloc]initWithCustomView:btnLeft];
+        
         self.navigationItem.leftBarButtonItems = @[flexSpacer,barLeft];
         
         UIButton * btnRight = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        btnRight.frame = CGRectMake(0, 0, 80, 30);
-        [btnRight setTitle:@"右边" forState:UIControlStateNormal];
+        btnRight.frame = CGRectMake(0, 0, 30, 30);
+        [btnRight setBackgroundImage:[UIImage imageNamed:@"header_icon_list"] forState:UIControlStateNormal];
         [btnRight addTarget:self action:@selector(btnRight) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem * barRight = [[UIBarButtonItem alloc]initWithCustomView:btnRight];
         self.navigationItem.rightBarButtonItems = @[flexSpacer,barRight];
@@ -63,38 +67,23 @@
 }
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
+    UIImageView * tipImageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 75)];
+    tipImageView.backgroundColor = [UIColor clearColor];
+    tipImageView.center = self.view.center;
+    tipImageView.image = [UIImage imageNamed:@"group_verify_blank"];
+    [self.view addSubview:tipImageView];
     
-//    self.mScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-//    self.mScrollView.backgroundColor = [UIColor yellowColor];
-//    self.mScrollView.contentSize = CGSizeMake(320 * 10, 568-64);
-//    self.mScrollView.showsVerticalScrollIndicator = NO;
-//    self.mScrollView.showsHorizontalScrollIndicator = NO;
-//    self.mScrollView.bounces = NO;
-//    self.mScrollView.delegate = self;
-//    self.mScrollView.alwaysBounceVertical = NO;
-//    self.mScrollView.alwaysBounceHorizontal = YES;
-//    self.mScrollView.pagingEnabled = YES;
-//    //[self.view addSubview:self.mScrollView];
-//    for (int i = 0 ; i<10; i++) {
-//        UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(320 * i, 0, 320, 568-64)];
-//        imageView.backgroundColor = [UIColor brownColor];
-//        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
-//        label.backgroundColor = [UIColor clearColor];
-//        label.font = [UIFont systemFontOfSize:17.0f];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        [imageView addSubview:label];
-//        label.text = [NSString stringWithFormat:@"第%d页",i];
-//        [self.mScrollView addSubview:imageView];
-//    }
-//    
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 300, 320, 40)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:17.0f];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:label];
-    label.text = [NSString stringWithFormat:@"%@",self.titleText];
+    
+    UILabel * descriptionLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(tipImageView.frame) + 10, SCREENWIDTH, 20)];
+    descriptionLabel.font = [UIFont systemFontOfSize:15.0f];
+    descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    descriptionLabel.textColor = [UIColor lightGrayColor];
+    descriptionLabel.text = @"暂时没有新消息";
+    [self.view addSubview:descriptionLabel];
+
 }
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {

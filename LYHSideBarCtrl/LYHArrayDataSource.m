@@ -51,6 +51,7 @@
         cell.backgroundColor = [UIColor clearColor];
     }
     id  item = [self itemAtIndexPath:indexPath];
+    
     self.configureCellBlock(cell,item);
     return cell;
 }
