@@ -78,32 +78,32 @@
 		5680E50E1C3F602D0094F0B7 /* sidebar_signature_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_signature_nor@2x.png"; sourceTree = "<group>"; };
 		5680E50F1C3F602D0094F0B7 /* sidebar_signature_other@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_signature_other@2x.png"; sourceTree = "<group>"; };
 		5680E5231C3F634B0094F0B7 /* CustomDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDefines.h; sourceTree = "<group>"; };
-		CB0455F7198F7935009DC8D4 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
-		CB0455F8198F7935009DC8D4 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		CB0455FA198F793E009DC8D4 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
-		CB0455FB198F793E009DC8D4 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
-		CB0455FD198F7947009DC8D4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		CB0455FE198F7947009DC8D4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CB0455F7198F7935009DC8D4 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftViewController.h; path = ../LeftViewController.h; sourceTree = "<group>"; };
+		CB0455F8198F7935009DC8D4 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftViewController.m; path = ../LeftViewController.m; sourceTree = "<group>"; };
+		CB0455FA198F793E009DC8D4 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightViewController.h; path = ../RightViewController.h; sourceTree = "<group>"; };
+		CB0455FB198F793E009DC8D4 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightViewController.m; path = ../RightViewController.m; sourceTree = "<group>"; };
+		CB0455FD198F7947009DC8D4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		CB0455FE198F7947009DC8D4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		CB128DBD198F8F4100068DE7 /* LYHArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHArrayDataSource.h; sourceTree = "<group>"; };
 		CB128DBE198F8F4100068DE7 /* LYHArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHArrayDataSource.m; sourceTree = "<group>"; };
 		CB128DC0198F8F4D00068DE7 /* LYHTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHTableDelegate.h; sourceTree = "<group>"; };
 		CB128DC1198F8F4D00068DE7 /* LYHTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHTableDelegate.m; sourceTree = "<group>"; };
 		CB128DC3198F8F6000068DE7 /* LYHDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHDataCell.h; sourceTree = "<group>"; };
 		CB128DC4198F8F6000068DE7 /* LYHDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHDataCell.m; sourceTree = "<group>"; };
-		CB3E1B0C198F6A89008F4AE9 /* LYHSideBarCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYHSideBarCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3E1B0C198F6A89008F4AE9 /* QQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3E1B0F198F6A89008F4AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB3E1B11198F6A89008F4AE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CB3E1B13198F6A89008F4AE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CB3E1B17198F6A89008F4AE9 /* LYHSideBarCtrl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LYHSideBarCtrl-Info.plist"; sourceTree = "<group>"; };
+		CB3E1B17198F6A89008F4AE9 /* QQ-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QQ-Info.plist"; sourceTree = "<group>"; };
 		CB3E1B19198F6A89008F4AE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB3E1B1B198F6A89008F4AE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CB3E1B1D198F6A89008F4AE9 /* LYHSideBarCtrl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LYHSideBarCtrl-Prefix.pch"; sourceTree = "<group>"; };
+		CB3E1B1D198F6A89008F4AE9 /* QQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QQ-Prefix.pch"; sourceTree = "<group>"; };
 		CB3E1B1E198F6A89008F4AE9 /* LYHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYHAppDelegate.h; sourceTree = "<group>"; };
 		CB3E1B1F198F6A89008F4AE9 /* LYHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYHAppDelegate.m; sourceTree = "<group>"; };
 		CB3E1B21198F6A89008F4AE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CB3E1B27198F6A89008F4AE9 /* LYHSideBarCtrlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYHSideBarCtrlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3E1B27198F6A89008F4AE9 /* QQ.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QQ.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3E1B28198F6A89008F4AE9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CB3E1B30198F6A89008F4AE9 /* LYHSideBarCtrlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LYHSideBarCtrlTests-Info.plist"; sourceTree = "<group>"; };
+		CB3E1B30198F6A89008F4AE9 /* QQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QQTests-Info.plist"; sourceTree = "<group>"; };
 		CB3E1B32198F6A89008F4AE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB3E1B34198F6A89008F4AE9 /* LYHSideBarCtrlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYHSideBarCtrlTests.m; sourceTree = "<group>"; };
 		CB3E1B3F198F75BB008F4AE9 /* LYHSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHSideBarViewController.h; sourceTree = "<group>"; };
@@ -161,6 +161,28 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		56CBAFDC1C3F881A00580562 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB0455F7198F7935009DC8D4 /* LeftViewController.h */,
+				CB0455F8198F7935009DC8D4 /* LeftViewController.m */,
+				CB0455FA198F793E009DC8D4 /* RightViewController.h */,
+				CB0455FB198F793E009DC8D4 /* RightViewController.m */,
+				CB0455FD198F7947009DC8D4 /* MainViewController.h */,
+				CB0455FE198F7947009DC8D4 /* MainViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		56CBAFDD1C3F885700580562 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CB128DBC198F8F2F00068DE7 /* LighterTable */,
+				CB3E1B3E198F759C008F4AE9 /* SideBarCtrl */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		CB128DBC198F8F2F00068DE7 /* LighterTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +194,7 @@
 				CB128DC4198F8F6000068DE7 /* LYHDataCell.m */,
 			);
 			name = LighterTable;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CB3E1B03198F6A89008F4AE9 = {
@@ -187,8 +210,8 @@
 		CB3E1B0D198F6A89008F4AE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB3E1B0C198F6A89008F4AE9 /* LYHSideBarCtrl.app */,
-				CB3E1B27198F6A89008F4AE9 /* LYHSideBarCtrlTests.xctest */,
+				CB3E1B0C198F6A89008F4AE9 /* QQ.app */,
+				CB3E1B27198F6A89008F4AE9 /* QQ.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,16 +230,10 @@
 		CB3E1B15198F6A89008F4AE9 /* LYHSideBarCtrl */ = {
 			isa = PBXGroup;
 			children = (
+				56CBAFDD1C3F885700580562 /* Tools */,
+				56CBAFDC1C3F881A00580562 /* ViewControllers */,
 				CB3E1B1E198F6A89008F4AE9 /* LYHAppDelegate.h */,
 				CB3E1B1F198F6A89008F4AE9 /* LYHAppDelegate.m */,
-				CB0455F7198F7935009DC8D4 /* LeftViewController.h */,
-				CB0455F8198F7935009DC8D4 /* LeftViewController.m */,
-				CB0455FA198F793E009DC8D4 /* RightViewController.h */,
-				CB0455FB198F793E009DC8D4 /* RightViewController.m */,
-				CB0455FD198F7947009DC8D4 /* MainViewController.h */,
-				CB0455FE198F7947009DC8D4 /* MainViewController.m */,
-				CB128DBC198F8F2F00068DE7 /* LighterTable */,
-				CB3E1B3E198F759C008F4AE9 /* SideBarCtrl */,
 				CB3E1B21198F6A89008F4AE9 /* Images.xcassets */,
 				CB3E1B16198F6A89008F4AE9 /* Supporting Files */,
 			);
@@ -227,10 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				5680E4FC1C3F602D0094F0B7 /* Resource */,
-				CB3E1B17198F6A89008F4AE9 /* LYHSideBarCtrl-Info.plist */,
+				CB3E1B17198F6A89008F4AE9 /* QQ-Info.plist */,
 				CB3E1B18198F6A89008F4AE9 /* InfoPlist.strings */,
 				CB3E1B1B198F6A89008F4AE9 /* main.m */,
-				CB3E1B1D198F6A89008F4AE9 /* LYHSideBarCtrl-Prefix.pch */,
+				CB3E1B1D198F6A89008F4AE9 /* QQ-Prefix.pch */,
 				5680E5231C3F634B0094F0B7 /* CustomDefines.h */,
 			);
 			name = "Supporting Files";
@@ -248,7 +265,7 @@
 		CB3E1B2F198F6A89008F4AE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB3E1B30198F6A89008F4AE9 /* LYHSideBarCtrlTests-Info.plist */,
+				CB3E1B30198F6A89008F4AE9 /* QQTests-Info.plist */,
 				CB3E1B31198F6A89008F4AE9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -262,14 +279,15 @@
 				CB3E1B43198F75EB008F4AE9 /* LYHSideBarDelegate.h */,
 			);
 			name = SideBarCtrl;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB3E1B0B198F6A89008F4AE9 /* LYHSideBarCtrl */ = {
+		CB3E1B0B198F6A89008F4AE9 /* QQ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB3E1B38198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "LYHSideBarCtrl" */;
+			buildConfigurationList = CB3E1B38198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "QQ" */;
 			buildPhases = (
 				CB3E1B08198F6A89008F4AE9 /* Sources */,
 				CB3E1B09198F6A89008F4AE9 /* Frameworks */,
@@ -279,14 +297,14 @@
 			);
 			dependencies = (
 			);
-			name = LYHSideBarCtrl;
+			name = QQ;
 			productName = LYHSideBarCtrl;
-			productReference = CB3E1B0C198F6A89008F4AE9 /* LYHSideBarCtrl.app */;
+			productReference = CB3E1B0C198F6A89008F4AE9 /* QQ.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CB3E1B26198F6A89008F4AE9 /* LYHSideBarCtrlTests */ = {
+		CB3E1B26198F6A89008F4AE9 /* QQTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB3E1B3B198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "LYHSideBarCtrlTests" */;
+			buildConfigurationList = CB3E1B3B198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "QQTests" */;
 			buildPhases = (
 				CB3E1B23198F6A89008F4AE9 /* Sources */,
 				CB3E1B24198F6A89008F4AE9 /* Frameworks */,
@@ -297,9 +315,9 @@
 			dependencies = (
 				CB3E1B2D198F6A89008F4AE9 /* PBXTargetDependency */,
 			);
-			name = LYHSideBarCtrlTests;
+			name = QQTests;
 			productName = LYHSideBarCtrlTests;
-			productReference = CB3E1B27198F6A89008F4AE9 /* LYHSideBarCtrlTests.xctest */;
+			productReference = CB3E1B27198F6A89008F4AE9 /* QQ.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LYH;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Charles Leo";
 				TargetAttributes = {
 					CB3E1B26198F6A89008F4AE9 = {
@@ -317,7 +335,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB3E1B07198F6A89008F4AE9 /* Build configuration list for PBXProject "LYHSideBarCtrl" */;
+			buildConfigurationList = CB3E1B07198F6A89008F4AE9 /* Build configuration list for PBXProject "QQ" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -329,8 +347,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB3E1B0B198F6A89008F4AE9 /* LYHSideBarCtrl */,
-				CB3E1B26198F6A89008F4AE9 /* LYHSideBarCtrlTests */,
+				CB3E1B0B198F6A89008F4AE9 /* QQ */,
+				CB3E1B26198F6A89008F4AE9 /* QQTests */,
 			);
 		};
 /* End PBXProject section */
@@ -404,7 +422,7 @@
 /* Begin PBXTargetDependency section */
 		CB3E1B2D198F6A89008F4AE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB3E1B0B198F6A89008F4AE9 /* LYHSideBarCtrl */;
+			target = CB3E1B0B198F6A89008F4AE9 /* QQ */;
 			targetProxy = CB3E1B2C198F6A89008F4AE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -433,7 +451,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -449,6 +466,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -473,7 +491,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -511,9 +528,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LYHSideBarCtrl/LYHSideBarCtrl-Prefix.pch";
-				INFOPLIST_FILE = "LYHSideBarCtrl/LYHSideBarCtrl-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LYHSideBarCtrl/QQ-Prefix.pch";
+				INFOPLIST_FILE = "LYHSideBarCtrl/QQ-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hdsxtech.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = QQ;
 				PROVISIONING_PROFILE = "9663f9b1-4baf-44fe-9f7f-9acfcbabb525";
 				WRAPPER_EXTENSION = app;
 			};
@@ -527,9 +545,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LYHSideBarCtrl/LYHSideBarCtrl-Prefix.pch";
-				INFOPLIST_FILE = "LYHSideBarCtrl/LYHSideBarCtrl-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LYHSideBarCtrl/QQ-Prefix.pch";
+				INFOPLIST_FILE = "LYHSideBarCtrl/QQ-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hdsxtech.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = QQ;
 				PROVISIONING_PROFILE = "9663f9b1-4baf-44fe-9f7f-9acfcbabb525";
 				WRAPPER_EXTENSION = app;
 			};
@@ -538,7 +557,6 @@
 		CB3E1B3C198F6A89008F4AE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LYHSideBarCtrl.app/LYHSideBarCtrl";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
@@ -548,13 +566,14 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LYHSideBarCtrl/LYHSideBarCtrl-Prefix.pch";
+				GCC_PREFIX_HEADER = "LYHSideBarCtrl/QQ-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LYHSideBarCtrlTests/LYHSideBarCtrlTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "LYHSideBarCtrlTests/QQTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hdsxtech.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = QQ;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -563,7 +582,6 @@
 		CB3E1B3D198F6A89008F4AE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LYHSideBarCtrl.app/LYHSideBarCtrl";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Wang (H6FZ84A8UH)";
@@ -573,9 +591,10 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LYHSideBarCtrl/LYHSideBarCtrl-Prefix.pch";
-				INFOPLIST_FILE = "LYHSideBarCtrlTests/LYHSideBarCtrlTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LYHSideBarCtrl/QQ-Prefix.pch";
+				INFOPLIST_FILE = "LYHSideBarCtrlTests/QQTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hdsxtech.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = QQ;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -584,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB3E1B07198F6A89008F4AE9 /* Build configuration list for PBXProject "LYHSideBarCtrl" */ = {
+		CB3E1B07198F6A89008F4AE9 /* Build configuration list for PBXProject "QQ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB3E1B36198F6A89008F4AE9 /* Debug */,
@@ -593,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB3E1B38198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "LYHSideBarCtrl" */ = {
+		CB3E1B38198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "QQ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB3E1B39198F6A89008F4AE9 /* Debug */,
@@ -602,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB3E1B3B198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "LYHSideBarCtrlTests" */ = {
+		CB3E1B3B198F6A89008F4AE9 /* Build configuration list for PBXNativeTarget "QQTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB3E1B3C198F6A89008F4AE9 /* Debug */,

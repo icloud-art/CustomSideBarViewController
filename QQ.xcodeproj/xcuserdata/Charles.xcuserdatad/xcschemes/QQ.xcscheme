@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CB3E1B0B198F6A89008F4AE9"
-               BuildableName = "LYHSideBarCtrl.app"
-               BlueprintName = "LYHSideBarCtrl"
-               ReferencedContainer = "container:LYHSideBarCtrl.xcodeproj">
+               BuildableName = "QQ.app"
+               BlueprintName = "QQ"
+               ReferencedContainer = "container:QQ.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CB3E1B26198F6A89008F4AE9"
-               BuildableName = "LYHSideBarCtrlTests.xctest"
-               BlueprintName = "LYHSideBarCtrlTests"
-               ReferencedContainer = "container:LYHSideBarCtrl.xcodeproj">
+               BuildableName = "QQ.xctest"
+               BlueprintName = "QQTests"
+               ReferencedContainer = "container:QQ.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB3E1B0B198F6A89008F4AE9"
-            BuildableName = "LYHSideBarCtrl.app"
-            BlueprintName = "LYHSideBarCtrl"
-            ReferencedContainer = "container:LYHSideBarCtrl.xcodeproj">
+            BuildableName = "QQ.app"
+            BlueprintName = "QQ"
+            ReferencedContainer = "container:QQ.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB3E1B0B198F6A89008F4AE9"
-            BuildableName = "LYHSideBarCtrl.app"
-            BlueprintName = "LYHSideBarCtrl"
-            ReferencedContainer = "container:LYHSideBarCtrl.xcodeproj">
+            BuildableName = "QQ.app"
+            BlueprintName = "QQ"
+            ReferencedContainer = "container:QQ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB3E1B0B198F6A89008F4AE9"
-            BuildableName = "LYHSideBarCtrl.app"
-            BlueprintName = "LYHSideBarCtrl"
-            ReferencedContainer = "container:LYHSideBarCtrl.xcodeproj">
+            BuildableName = "QQ.app"
+            BlueprintName = "QQ"
+            ReferencedContainer = "container:QQ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
