@@ -136,11 +136,11 @@
     [self.view addSubview:tableView];
     
 }
-- (LYHMyFileViewController *)subControllerWithIndex:(NSInteger)index
+- (UINavigationController *)subControllerWithIndex:(NSInteger)index
 {
-    LYHMyFileViewController * mainView =[[LYHMyFileViewController alloc]init];
-//    UINavigationController * navCtrl = [[UINavigationController alloc]initWithRootViewController:mainView];
-    return mainView;
+    MainViewController * mainView =[[MainViewController alloc]init];
+    UINavigationController * navCtrl = [[UINavigationController alloc]initWithRootViewController:mainView];
+    return navCtrl;
 }
 - (void)didReceiveMemoryWarning
 {

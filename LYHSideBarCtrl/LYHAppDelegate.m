@@ -14,6 +14,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
     LYHSideBarViewController * sideBar = [[LYHSideBarViewController alloc]init];
     self.window.rootViewController = sideBar;
     self.window.backgroundColor = [UIColor whiteColor];

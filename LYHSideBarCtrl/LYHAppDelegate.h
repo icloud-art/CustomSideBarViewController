@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LYHAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    UITabBarController * tabbar;
 
+}
 @property (strong, nonatomic) UIWindow *window;
 
 @end

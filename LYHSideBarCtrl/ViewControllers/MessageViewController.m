@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = bgViewColor;
+    self.title = @"消息";
 }
 
 - (void)didReceiveMemoryWarning {

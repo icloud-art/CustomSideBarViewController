@@ -87,44 +87,7 @@ const float MoveAnimationDuration = 0.8;
 - (void)makeToolBarView{
     
     tabbar = [[UITabBarController alloc]init];
-    [self addChildViewController:tabbar];
-    [self.contentView addSubview:tabbar.view];
-    
-    
-//    toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0,SCREENHEIGHT - 44, SCREENWIDTH, 44)];
-//    toolBar.backgroundColor = [UIColor whiteColor];
-//    NSArray * titleArray = @[@"消息",@"联系人",@"动态"];
-//    NSArray * imgArray = @[@"sidebar_album",@"sidebar_album",@"sidebar_album"];
-//    NSArray * highImgArray = @[@"sidebar_album",@"sidebar_album",@"sidebar_album"];
-//    for (int i=0 ;i <3 ; i++) {
-//        
-//        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        button.frame = CGRectMake(SCREENWIDTH/3*i, 0,SCREENWIDTH/3, 30);
-//        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//        [button setImage:[UIImage imageNamed:imgArray[i]] forState:UIControlStateNormal];
-//        button.tag = 100+i;
-//        [button setImage:[UIImage imageNamed:imgArray[i]] forState:UIControlStateHighlighted];
-//        [toolBar addSubview:button];
-//        UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(button.frame.origin.x, CGRectGetMaxY(button.frame), SCREENWIDTH/3, 14)];
-//        titleLabel.text  = titleArray[i];
-//        titleLabel.textAlignment = NSTextAlignmentCenter;
-//        titleLabel.font = [UIFont systemFontOfSize:13.0f];
-//        titleLabel.textColor = [UIColor grayColor];
-//        titleLabel.alpha = 0.8;
-//        [toolBar addSubview:titleLabel];
-//    }
-//    [self.contentView addSubview:toolBar];
-//    
-//    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-//    
-//    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithCustomView:<#(nonnull UIView *)#> target:self action:@selector(toobarAction:)];
-//    UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toobarAction:)];
-//    UIBarButtonItem *item3 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(toobarAction:)];
-//
-//    NSArray *items = [NSArray arrayWithObjects:spaceItem,item1,spaceItem,item2,spaceItem,item3,nil];
-//    toolBar.items = items;
 
-    
     NSMutableArray * array = [[NSMutableArray alloc] initWithCapacity:0];
 
     MessageViewController *messageVC = [[MessageViewController alloc] init];
@@ -148,7 +111,7 @@ const float MoveAnimationDuration = 0.8;
     tabbar.viewControllers = @[nav1,nav2,nav3];
     tabbar.selectedIndex = 0;
     tabbar.tabBar.selectedImageTintColor = customerBlue;
-
+    self.view.window.rootViewController = tabbar;
 }
 - (void)buttonClick:(UIButton *)sender{
     NSLog(@"%zi",sender.tag);
