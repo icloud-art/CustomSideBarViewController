@@ -48,6 +48,7 @@
     LYHDataCell * cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
     if (cell== nil) {
         cell = [[LYHDataCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
     }
     id  item = [self itemAtIndexPath:indexPath];
     self.configureCellBlock(cell,item);

@@ -20,19 +20,24 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        UIBarButtonItem *flexSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem: UIBarButtonSystemItemFixedSpace target:self action:nil];
+        flexSpacer.width = -10;
+        
+        
         UIButton * btnLeft = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         btnLeft.frame = CGRectMake(0, 0, 80, 30);
         [btnLeft setTitle:@"左边" forState:UIControlStateNormal];
         [btnLeft addTarget:self action:@selector(btnLeft) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem * barLeft = [[UIBarButtonItem alloc]initWithCustomView:btnLeft];
-        self.navigationItem.leftBarButtonItem = barLeft;
+        self.navigationItem.leftBarButtonItems = @[flexSpacer,barLeft];
         
         UIButton * btnRight = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         btnRight.frame = CGRectMake(0, 0, 80, 30);
         [btnRight setTitle:@"右边" forState:UIControlStateNormal];
         [btnRight addTarget:self action:@selector(btnRight) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem * barRight = [[UIBarButtonItem alloc]initWithCustomView:btnRight];
-        self.navigationItem.rightBarButtonItem = barRight;
+        self.navigationItem.rightBarButtonItems = @[flexSpacer,barRight];
     }
     return self;
 }
@@ -59,7 +64,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.view.backgroundColor = [UIColor greenColor];
+	self.view.backgroundColor = [UIColor whiteColor];
     
 //    self.mScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
 //    self.mScrollView.backgroundColor = [UIColor yellowColor];

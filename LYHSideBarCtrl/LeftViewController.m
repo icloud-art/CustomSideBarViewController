@@ -16,6 +16,8 @@
     LYHArrayDataSource * _dataSource;
     LYHTableDelegate * _delegate;
     NSInteger selectIndex;
+    UIImageView * headImage;
+    UIImageView * rCodeImage;
 }
 @end
 
@@ -29,17 +31,40 @@
     }
     return self;
 }
+- (void)makeView{
+    
+    headImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 60, 60, 60)];
+    headImage.clipsToBounds = YES;
+    headImage.layer.borderWidth = 1.0f;
+    headImage.backgroundColor = [UIColor lightGrayColor];
+    headImage.userInteractionEnabled = YES;
+    headImage.layer.cornerRadius = 30.0f;
+    headImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    headImage.layer.borderWidth = 1.0f;
+    [self.view addSubview:headImage];
+    
+    UIImageView * bgImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(headImage.frame),ContentOffset, 160)];
+    bgImage.image = [UIImage imageNamed:@"sidebar_bg.jpg"];
+    [self.view addSubview:bgImage];
+    
+    UIView * containerView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(bgImage.frame), ContentOffset, SCREENHEIGHT - CGRectGetHeight(headImage.frame) - CGRectGetHeight(bgImage.frame))];
+    containerView.backgroundColor = customerBlue;
+    [self.view addSubview:containerView];
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor brownColor];
+    self.view.backgroundColor = customerBgColor;
+    [self makeView];
+
     if ([self.delegate respondsToSelector:@selector(leftSideBarSelectWithController:)]) {
         [self.delegate leftSideBarSelectWithController: [self subControllerWithIndex:0]];
         selectIndex = 0;
     }
-    UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    [self.view addSubview:tableView];
+    UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 200) style:UITableViewStylePlain];
+    
     TableViewCellConfigureBlock configureBlock = ^(LYHDataCell *cell,NSString * title){
         [cell configureForData:title];
     };
@@ -62,7 +87,7 @@
     };
     _delegate = [[LYHTableDelegate alloc]initWithCount:array.count andHeight:60 andConfigureBlock:delegateBlock];
     tableView.delegate = _delegate;
-    [self.view addSubview:tableView];
+//    [self.view addSubview:tableView];
     
 }
 - (UINavigationController *)subControllerWithIndex:(NSInteger)index

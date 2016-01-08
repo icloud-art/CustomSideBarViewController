@@ -26,7 +26,6 @@
 @implementation LYHSideBarViewController
 @synthesize contentView,navBackView,sideBarShowing,leftViewController,rightViewController;
 static LYHSideBarViewController * rootController;
-const int ContentOffset = 230;
 const int ContentMinOffset = 60;
 const float MoveAnimationDuration = 0.8;
 +(id)share
@@ -210,12 +209,11 @@ const float MoveAnimationDuration = 0.8;
                [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                    self.contentView.transform  = CGAffineTransformMakeTranslation(ContentOffset, 0);
                    /*
-                    组合动画
                     CGAffineTransform trans  = CGAffineTransformMakeTranslation(ContentOffset, 0);
                     CGAffineTransform scale = CGAffineTransformMakeScale(0.8, 0.8);
                     CGAffineTransform newTransform = CGAffineTransformConcat(trans, scale);
                     self.contentView.transform = newTransform;
-                    */
+                   */
                    [self statusBarView].transform = self.contentView.transform;
                } completion:nil];
             }
