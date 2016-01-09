@@ -111,7 +111,9 @@ const float MoveAnimationDuration = 0.8;
     tabbar.viewControllers = @[nav1,nav2,nav3];
     tabbar.selectedIndex = 0;
     tabbar.tabBar.selectedImageTintColor = customerBlue;
-    self.view.window.rootViewController = tabbar;
+    [self addChildViewController:tabbar];
+    [self.contentView addSubview:tabbar.view];
+    [self.view bringSubviewToFront:self.contentView];
 }
 - (void)buttonClick:(UIButton *)sender{
     NSLog(@"%zi",sender.tag);

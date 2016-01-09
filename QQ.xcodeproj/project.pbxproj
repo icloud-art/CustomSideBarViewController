@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56142DD91C40E92B00205306 /* 2016-01-09 15_06_19.gif in Resources */ = {isa = PBXBuildFile; fileRef = 56142DD81C40E92B00205306 /* 2016-01-09 15_06_19.gif */; };
 		5680E5101C3F602D0094F0B7 /* sidebar_ QRcode_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5680E4FD1C3F602D0094F0B7 /* sidebar_ QRcode_normal@2x.png */; };
 		5680E5111C3F602D0094F0B7 /* sidebar_ QRcode_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5680E4FE1C3F602D0094F0B7 /* sidebar_ QRcode_press@2x.png */; };
 		5680E5121C3F602D0094F0B7 /* sidebar_album@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5680E4FF1C3F602D0094F0B7 /* sidebar_album@3x.png */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56142DD81C40E92B00205306 /* 2016-01-09 15_06_19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "2016-01-09 15_06_19.gif"; sourceTree = "<group>"; };
 		5680E4FD1C3F602D0094F0B7 /* sidebar_ QRcode_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_ QRcode_normal@2x.png"; sourceTree = "<group>"; };
 		5680E4FE1C3F602D0094F0B7 /* sidebar_ QRcode_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_ QRcode_press@2x.png"; sourceTree = "<group>"; };
 		5680E4FF1C3F602D0094F0B7 /* sidebar_album@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_album@3x.png"; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				CB3E1B18198F6A89008F4AE9 /* InfoPlist.strings */,
 				CB3E1B1B198F6A89008F4AE9 /* main.m */,
 				CB3E1B1D198F6A89008F4AE9 /* QQ-Prefix.pch */,
+				56142DD81C40E92B00205306 /* 2016-01-09 15_06_19.gif */,
 				5680E5231C3F634B0094F0B7 /* CustomDefines.h */,
 			);
 			name = "Supporting Files";
@@ -451,6 +454,7 @@
 				5680E5141C3F602D0094F0B7 /* sidebar_business@3x.png in Resources */,
 				56CBB0041C3FA28200580562 /* usersummary_icon_lv_star@2x.png in Resources */,
 				56CBAFE81C3F93E600580562 /* qq_head.png in Resources */,
+				56142DD91C40E92B00205306 /* 2016-01-09 15_06_19.gif in Resources */,
 				56CBB0091C3FAD4100580562 /* group_verify_blank@2x.png in Resources */,
 				5680E51D1C3F602D0094F0B7 /* sidebar_nightmode_on@3x.png in Resources */,
 				5680E5111C3F602D0094F0B7 /* sidebar_ QRcode_press@2x.png in Resources */,
